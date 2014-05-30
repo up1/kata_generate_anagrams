@@ -26,7 +26,7 @@ public class Anagrams {
 	private String convertData(String input, int round) {
 		String result = input.substring(0, round);
 		if (round == 1) {
-			return result + input.substring(2, input.length());
+			return result + input.substring(round + 1, input.length());
 		}
 		return result + input.substring(round + 1, input.length());
 	}
