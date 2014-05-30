@@ -5,15 +5,21 @@ import java.util.List;
 
 public class Anagrams {
 
-	public List<String> generate(String input) {
-		List<String> result = new ArrayList<String>();
+	@SuppressWarnings("serial")
+	public List<String> generate(final String input) {
 		if (input.length() <= 1) {
-			result.add(input);
-		} else {
-			for (int i = 0; i < input.length(); i++) {
-				for (int j = 0; j < input.length() - 1; j++) {
-					result.add(input.substring(i, i + 1) + generate(convertData(input, i)).get(j));
+			return new ArrayList<String>() {
+				{
+					add(input);
 				}
+			};
+		}
+		List<String> result = new ArrayList<String>();
+		for (int i = 0; i < input.length(); i++) {
+			String first = input.substring(i, i + 1);
+			String second = convertData(input, i);
+			for(String last : generate(second)) {
+				result.add(first + last);
 			}
 		}
 		return result;
