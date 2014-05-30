@@ -13,12 +13,10 @@ public class Anagrams {
 			result.add(input);
 			result.add(input.substring(1, 2) + input.substring(0, 1));
 		} else {
-			result.add(input.substring(0, 1) + generate(convertData(input, 0)).get(0));
-			result.add(input.substring(0, 1) + generate(convertData(input, 0)).get(1));
-			result.add(input.substring(1, 2) + generate(convertData(input, 1)).get(0));
-			result.add(input.substring(1, 2) + generate(convertData(input, 1)).get(1));
-			result.add(input.substring(2, 3) + generate(convertData(input, 2)).get(0));
-			result.add(input.substring(2, 3) + generate(convertData(input, 2)).get(1));
+			for (int i = 0; i < input.length(); i++) {
+				result.add(input.substring(i, i + 1) + generate(convertData(input, i)).get(0));
+				result.add(input.substring(i, i + 1) + generate(convertData(input, i)).get(1));
+			}
 		}
 		return result;
 	}
