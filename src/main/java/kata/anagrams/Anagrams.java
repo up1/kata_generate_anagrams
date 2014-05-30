@@ -24,10 +24,11 @@ public class Anagrams {
 	}
 
 	private String convertData(String input, int round) {
-		String result = input.substring(0, round);
+		String result1 = input.substring(0, round);
+		String result2 = input.substring(round + 1, input.length());
 		if (round == 1) {
-			return result + input.substring(round + 1, input.length());
+			return result1 + result2;
 		}
-		return result + input.substring(round + 1, input.length());
+		return result1 + result2;
 	}
 }
