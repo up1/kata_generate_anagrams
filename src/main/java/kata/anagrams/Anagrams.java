@@ -9,11 +9,11 @@ public class Anagrams {
 		List<String> result = new ArrayList<String>();
 		if (input.length() == 3) {
 			result.add(input.substring(0, 1) + convertData("BC", 1));
-			result.add(input.substring(0, 1) + "CB");
-			result.add(input.substring(1, 2) + "AC");
-			result.add(input.substring(1, 2) + "CA");
-			result.add(input.substring(2, 3) + "AB");
-			result.add(input.substring(2, 3) + "BA");
+			result.add(input.substring(0, 1) + convertData("BC", 2));
+			result.add(input.substring(1, 2) + convertData("AC", 1));
+			result.add(input.substring(1, 2) + convertData("AC", 2));
+			result.add(input.substring(2, 3) + convertData("AB", 1));
+			result.add(input.substring(2, 3) + convertData("AB", 2));
 		} else if (input.length() == 2) {
 			result.add(input);
 			result.add(input.substring(1, 2) + input.substring(0, 1));
@@ -22,8 +22,10 @@ public class Anagrams {
 		}
 		return result;
 	}
-	
+
 	private String convertData(String input, int time) {
+		if (time == 2)
+			return input.substring(1, 2) + input.substring(0, 1);
 		return input;
 	}
 
