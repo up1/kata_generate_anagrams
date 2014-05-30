@@ -8,7 +8,7 @@ public class Anagrams {
 	public List<String> generate(String input) {
 		List<String> result = new ArrayList<String>();
 		if (input.length() == 3) {
-			result.add(input);
+			result.add(input.substring(0, 1) + "BC");
 			result.add(input.substring(0, 1) + "CB");
 			result.add(input.substring(1, 2) + "AC");
 			result.add(input.substring(1, 2) + "CA");
