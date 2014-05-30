@@ -25,12 +25,11 @@ public class Anagrams {
 
 	private String convertData(String input, int round) {
 		if( round == 0 ) {
-			return "BC";
+			return input.substring(1);
 		}
 		if( round == 1 ) {
 			return "AC";
 		}
-		return "AB";
+		return input.substring(0, 2);
 	}
-
 }
