@@ -9,9 +9,6 @@ public class Anagrams {
 		List<String> result = new ArrayList<String>();
 		if (input.length() <= 1) {
 			result.add(input);
-		} else if (input.length() == 2) {
-			result.add(input);
-			result.add(input.substring(1, 2) + input.substring(0, 1));
 		} else {
 			for (int i = 0; i < input.length(); i++) {
 				for (int j = 0; j < input.length() - 1; j++) {
