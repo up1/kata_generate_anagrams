@@ -14,8 +14,9 @@ public class Anagrams {
 			result.add(input.substring(1, 2) + input.substring(0, 1));
 		} else {
 			for (int i = 0; i < input.length(); i++) {
-				result.add(input.substring(i, i + 1) + generate(convertData(input, i)).get(0));
-				result.add(input.substring(i, i + 1) + generate(convertData(input, i)).get(1));
+				for (int j = 0; j < input.length() - 1; j++) {
+					result.add(input.substring(i, i + 1) + generate(convertData(input, i)).get(j));
+				}
 			}
 		}
 		return result;
