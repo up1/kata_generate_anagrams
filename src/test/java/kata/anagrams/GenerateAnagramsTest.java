@@ -29,6 +29,13 @@ public class GenerateAnagramsTest {
 		List<String> result = anagrams.generate("AB");
 		assertEquals(list("AB", "BA"), result);
 	}
+	
+	@Test
+	public void Input_with_three_character_Should_Return_6_input() {
+		Anagrams anagrams = new Anagrams();
+		List<String> result = anagrams.generate("ABC");
+		assertEquals(list("ABC", "ACB", "BAC", "BCA", "CAB", "CBA"), result);
+	}
 
 	private List<String> list(String... strings) {
 		List<String> list = new ArrayList<String>();
