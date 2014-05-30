@@ -7,18 +7,18 @@ public class Anagrams {
 
 	public List<String> generate(String input) {
 		List<String> result = new ArrayList<String>();
-		if (input.length() == 3) {
+		if (input.length() <= 1) {
+			result.add(input);
+		} else if (input.length() == 2) {
+			result.add(input);
+			result.add(input.substring(1, 2) + input.substring(0, 1));
+		} else {
 			result.add(input.substring(0, 1) + generate(convertData(input, 0)).get(0));
 			result.add(input.substring(0, 1) + generate(convertData(input, 0)).get(1));
 			result.add(input.substring(1, 2) + generate(convertData(input, 1)).get(0));
 			result.add(input.substring(1, 2) + generate(convertData(input, 1)).get(1));
 			result.add(input.substring(2, 3) + generate(convertData(input, 2)).get(0));
 			result.add(input.substring(2, 3) + generate(convertData(input, 2)).get(1));
-		} else if (input.length() == 2) {
-			result.add(input);
-			result.add(input.substring(1, 2) + input.substring(0, 1));
-		} else {
-			result.add(input);
 		}
 		return result;
 	}
