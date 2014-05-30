@@ -24,12 +24,12 @@ public class Anagrams {
 	}
 
 	private String convertData(String input, int round) {
-		if( round == 0 ) {
-			return input.substring(1);
+		if (round == 0) {
+			return input.substring(1, input.length());
 		}
-		if( round == 1 ) {
-			return input.substring(0,1) + input.substring(2);
+		if (round == 1) {
+			return input.substring(0, round) + input.substring(2, input.length());
 		}
-		return input.substring(0, 2);
+		return input.substring(0, round);
 	}
 }
