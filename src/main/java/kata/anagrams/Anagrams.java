@@ -8,8 +8,8 @@ public class Anagrams {
 	public List<String> generate(String input) {
 		List<String> result = new ArrayList<String>();
 		if (input.length() == 3) {
-			result.add(input.substring(0, 1) + convertData("BC", 1));
-			result.add(input.substring(0, 1) + convertData("BC", 2));
+			result.add(input.substring(0, 1) + generate(convertData(input, 0)).get(0));
+			result.add(input.substring(0, 1) + generate(convertData(input, 0)).get(1));
 			result.add(input.substring(1, 2) + convertData("AC", 1));
 			result.add(input.substring(1, 2) + convertData("AC", 2));
 			result.add(input.substring(2, 3) + convertData("AB", 1));
@@ -23,8 +23,11 @@ public class Anagrams {
 		return result;
 	}
 
-	private String convertData(String input, int time) {
-		if (time == 2)
+	private String convertData(String input, int round) {
+		if( round == 0 ) {
+			return "BC";
+		}
+		if (round == 2)
 			return input.substring(1, 2) + input.substring(0, 1);
 		return input;
 	}
