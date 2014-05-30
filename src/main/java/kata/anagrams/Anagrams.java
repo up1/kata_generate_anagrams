@@ -7,13 +7,8 @@ public class Anagrams {
 
 	public List<String> generate(String input) {
 		List<String> result = new ArrayList<String>();
-		if(input == "")
-			result.add("");
-		else
-			result.add(input);
+		result.add(input);
 		return result;
 	}
-
-	
 
 }
