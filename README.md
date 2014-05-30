@@ -9,7 +9,9 @@ anagrams of an input string.
 
 For example, the potential anagrams of "biro" are
 
+```
 biro bior brio broi boir bori
 ibro ibor irbo irob iobr iorb
 rbio rboi ribo riob robi roib
 obir obri oibr oirb orbi orib
+```
